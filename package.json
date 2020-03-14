@@ -6,8 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "dev":"nodemon server.js"
+    "dev": "nodemon server.js"
   },
   "author": "victor",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "pino": "^5.17.0"
+  }
 }

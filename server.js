@@ -1,11 +1,12 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const logger = require('pino')()
 
 function sendFileContent(response, fileName, contentType){
 	fs.readFile(fileName, function(err, data){
 		if(err){
-      console.log(err)
+      logger.error(err);
 			response.writeHead(404);
 			response.write("Not Found!");
 		}
@@ -18,12 +19,8 @@ function sendFileContent(response, fileName, contentType){
 }
 
 const requestListener = function (request, response) {
-  if(request.url === "/index"){
+  if(request.url === "/"){
   		sendFileContent(response, "index.html", "text/html");
-  	}
-  	else if(request.url === "/"){
-  		response.writeHead(200, {'Content-Type': 'text/html'});
-  		response.write('<b>Hey there!</b><br /><br />This is the default response. Requested URL is: ' + request.url);
   	}
   	else if(/^\/[a-zA-Z0-9\/]*.js$/.test(request.url.toString())){
   		sendFileContent(response, request.url.toString().substring(1), "text/javascript");
@@ -36,8 +33,6 @@ const requestListener = function (request, response) {
   	}
 }
 
-
-
 const server = http.createServer(requestListener);
-server.listen(80);
-console.log('server started');
+server.listen(8080 || process.env.PORT);
+logger.info('server started');
