@@ -39,5 +39,5 @@ const requestListener = function (request, response) {
 }
 
 const server = http.createServer(requestListener);
-server.listen(8080 || process.env.PORT);
+server.listen(process.env.PORT || 8080);
 logger.info('server started');
