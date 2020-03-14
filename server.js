@@ -4,6 +4,7 @@ const path = require('path');
 const logger = require('pino')()
 
 function sendFileContent(response, fileName, contentType){
+  logger.info('loaded', fileName)
 	fs.readFile(fileName, function(err, data){
 		if(err){
       logger.error(err);
@@ -19,7 +20,7 @@ function sendFileContent(response, fileName, contentType){
 }
 
 const requestListener = function (request, response) {
-  if(request.url === "/"){
+  if(request.url === "/game"){
   		sendFileContent(response, "index.html", "text/html");
   	}
   	else if(/^\/[a-zA-Z0-9\/]*.js$/.test(request.url.toString())){
@@ -28,9 +29,13 @@ const requestListener = function (request, response) {
   	else if(/^\/[a-zA-Z0-9\/]*.css$/.test(request.url.toString())){
   		sendFileContent(response, request.url.toString().substring(1), "text/css");
   	}
-  	else{
+  	else if(/^\/[a-zA-Z0-9\/]*.gb/.test(request.url.toString())){
         sendFileContent(response, request.url.toString().substring(1), 'application/octet-stream');
-  	}
+  	} else {
+      response.writeHead(404);
+      response.write(`Not Found! Please go to ${request.headers.host}/game`);
+      response.end();
+    }
 }
 
 const server = http.createServer(requestListener);
