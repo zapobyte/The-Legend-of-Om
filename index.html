@@ -1,107 +1,44 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href=https://unpkg.com/nes.css/css/nes.css rel=stylesheet>
-  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" />
-  <title>The Adventures of Oana</title>
-  <meta name="author" content="victor" />
-  <style>
-    .help-section{
-      position: absolute;
-      margin:auto;
-      bottom:0;
-      right:13px;
-    }
-    .icon-list > a{
-      margin:5px;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="help-section">
-    <button type="button" class="info nes-btn is-primary" onclick="document.getElementById('dialog-default').showModal();">
-      <i class="nes-icon coin"></i>
-    </button>
-
-    <dialog class="nes-dialog nes-container with-title is-centered" id="dialog-default">
-      <p class="title"><b>The adventure of Oana</b></p>
-
-      <form method="dialog">
-        <i class="nes-icon heart"></i>
-        <p class="title">Informations</p>
-
-        <div class="nes-container is-rounded is-light nes-container with-title is-centered">
-          <p class="title">Controls</p>
-
-          <ul  class="lists nes-list is-circle">
-            <li>Up - Up Arrow / W  </li>
-            <li>Down - Down Arrow / S  </li>
-            <li>Left - Left Arrow / A  </li>
-            <li>Right - Right Arrow / D  </li>
-            <li>A - Alt / Z / J  </li>
-            <li>B - Ctrl / K / X  </li>
-            <li>Start - Enter  </li>
-            <li>Select - Shift  </li>
-          </ul>
-        </div>
-        <br>
-        <footer class="nes-container is-rounded is-dark with-title is-centered">
-          <p class="title">Find me on </p>
-          <section class="icon-list">
-            <!-- github -->
-            <a href="https://github.com/vzapo"><i class="nes-icon github"></i></a>
-
-            <!-- gmail -->
-            <a href="mailto:victor.zaporojan0@gmail.com"><i class="nes-icon gmail"></i></a>
-          </section>
-        </footer>
-
-        <menu class="dialog-menu">
-         <button class="nes-btn is-primary">Confirm</button>
-       </menu>
-
-      </form>
-
-    </dialog>
-  </div>
-
-
-  <div id="gameboy_shell">
-    <div id="game">
-      <canvas id="mainCanvas" width="160" height="144">No Canvas Support</canvas>
-    </div>
-    <div id="controller">
-      <div id="controller_dpad">
-        <div id="controller_left"></div>
-        <div id="controller_right"></div>
-        <div id="controller_up"></div>
-        <div id="controller_down"></div>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>The Legend of OM</title>
+    <meta name="author" content="victor" />
+    
+    
+  </head>
+  <body>
+    <div id="gameboy_shell">
+      <div id="game">
+        <canvas id="mainCanvas" width="160" height="144">No Canvas Support</canvas>
       </div>
-      <div id="controller_select" class="capsuleBtn">Select</div>
-      <div id="controller_start" class="capsuleBtn">Start</div>
-      <div id="controller_b" class="roundBtn">B</div>
-      <div id="controller_a" class="roundBtn">A</div>
+      <div id="controller">
+        <div id="controller_dpad">
+          <div id="controller_left"></div>
+          <div id="controller_right"></div>
+          <div id="controller_up"></div>
+          <div id="controller_down"></div>
+        </div>
+        <div id="controller_select" class="capsuleBtn">Select</div>
+        <div id="controller_start" class="capsuleBtn">Start</div>
+        <div id="controller_b" class="roundBtn">B</div>
+        <div id="controller_a" class="roundBtn">A</div>
+      </div>      
     </div>
-  </div>
-
-  <script>
-    const customControls = {}
-  </script>
-  <script src="js/other/mobile.js"></script>
-  <script src="js/other/base64.js"></script>
-  <script src="js/other/swfobject.js"></script>
-  <script src="js/other/resampler.js"></script>
-  <script src="js/other/XAudioServer.js"></script>
-  <script src="js/other/controls.js"></script>
-  <script src="js/other/resize.js"></script>
-  <script src="js/GameBoyCore.js"></script>
-  <script src="js/GameBoyIO.js"></script>
-</body>
-
+    <script>
+      const customControls = {}
+    </script>
+    <script src="js/other/mobile.js"></script>
+    <script src="js/other/base64.js"></script>
+    <script src="js/other/swfobject.js"></script>
+    <script src="js/other/resampler.js"></script>
+    <script src="js/other/XAudioServer.js"></script>
+    <script src="js/other/controls.js"></script>
+    <script src="js/other/resize.js"></script>    
+    <script src="js/GameBoyCore.js"></script>
+    <script src="js/GameBoyIO.js"></script>
+  </body>
 </html>

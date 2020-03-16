@@ -1,15 +1,16 @@
-body, html {
+body {
   background: #031921;
   color: #fff;
-  margin: 0 !important;
-  padding: 0 !important;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  margin: 0px;
+  padding: 0px;
   touch-action: none;
   text-align: center;
   -webkit-touch-callout: none;
   user-select: none;
   overflow: hidden;
-  width:100%;
-  height:100%;
 }
 
 #game {
